@@ -45,7 +45,7 @@ THUMB="bit.ly/thumbnil"
 def a(client, message):
     query=message.text
     print(query)
-    m = message.reply('ꜰᴇᴛᴄʜɪɴɢ..')
+    m = message.reply('ꜰᴇᴛᴄʜɪɴɢ.ᴍᴜsɪᴄ...')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -84,7 +84,7 @@ def a(client, message):
         )
         print(str(e))
         return
-    m.edit("sᴇʀᴠᴇʀ ʀᴇsᴘᴏɴᴅᴇᴅ, ᴜᴘʟᴏᴀᴅɪɴɢ...")
+    m.edit("sᴛɪʟʟ.ᴜᴘʟᴏᴀᴅɪɴɢ.ᴘʟᴇᴀsᴇ.ᴡᴀɪᴛ...")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
