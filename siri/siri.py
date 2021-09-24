@@ -16,7 +16,7 @@ BUTTON1="🎧 ᴍᴜsɪᴄ.ᴘᴀɴᴅᴀ"
 B2="telegram.dog/Elliot_Tg"
 OWNER="Owner"
 B3="https://t.me/musicspanda"
-ABS="🍂 ᴅᴇᴠᴇʟᴏᴘᴇʀ 🍂"
+ABS="ᴅᴇᴠᴇʟᴏᴘᴇʀ"
 APPER="GxNeo"
 
 @Client.on_message(filters.command('start') & filters.private)
