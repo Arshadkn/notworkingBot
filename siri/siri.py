@@ -12,12 +12,12 @@ from config import Config
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
-BUTTON1="📜 Source Code 📜"
-B2="telegram.dog/shamilhabeeb"
+BUTTON1="🎧 ᴍᴜsɪᴄ.ᴘᴀɴᴅᴀ"
+B2="telegram.dog/Elliot_Tg"
 OWNER="Owner"
-GITCLONE="github.com/shamilhabeebnelli/song-bot"
-ABS="Developer"
-APPER="shamilhabeeb"
+B3="https://t.me/musicspanda"
+ABS="🍂 ᴅᴇᴠᴇʟᴏᴘᴇʀ 🍂"
+APPER="GxNeo"
 
 @Client.on_message(filters.command('start') & filters.private)
 async def start(client, message):
@@ -25,7 +25,7 @@ async def start(client, message):
          reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(BUTTON1, url=GITCLONE)
+                    InlineKeyboardButton(BUTTON1, url=B3)
                  ],[
                     InlineKeyboardButton(OWNER, url=f"https://telegram.dog/{Config.OWNER}"),
                     InlineKeyboardButton(ABS, url=B2)
