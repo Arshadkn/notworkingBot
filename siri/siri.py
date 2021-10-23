@@ -45,7 +45,7 @@ THUMB="bit.ly/thumbnil"
 def a(client, message):
     query=message.text
     print(query)
-    m = message.reply('ꜰᴇᴛᴄʜɪɴɢ.ᴍᴜsɪᴄ...')
+    m = message.reply('🔍 𝖥𝖾𝗍𝖼𝗁𝗂𝗇𝗀 𝖳𝗁𝖾 𝖲𝗈𝗇𝗀...')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -90,7 +90,7 @@ def a(client, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🎶 <b>ᴛɪᴛʟᴇ:</b> <a href="{link}">{title}</a>\n⌚ <b>ᴅᴜʀᴀᴛɪᴏɴ:</b> <code>{duration}</code>\n📻 <b>ᴜᴘʟᴏᴀᴅᴇᴅ ʙʏ:</b> <a href="https://t.me/musicspanda">ᴍᴜsɪᴄ.ᴘᴀɴᴅᴀ</a>'
+        rep = f'◕ 🎶 <b>ᴛɪᴛʟᴇ:</b> <a href="{link}">{title}</a>\n◕ ⌚ <b>ᴅᴜʀᴀᴛɪᴏɴ:</b> <code>{duration}</code>\n◕ 📻 <b>ᴜᴘʟᴏᴀᴅᴇᴅ ʙʏ:</b> <a href="https://t.me/musicspanda">ᴍᴜsɪᴄ.ᴘᴀɴᴅᴀ</a>'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
