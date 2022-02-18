@@ -22,7 +22,10 @@ def time_to_seconds(time):
 
 @Client.on_message(filters.command('start') & filters.private)
 async def start(client, message):
-    await message.reply_photo(photo=Config.START_IMG, caption=Config.START_MSG.format(message.from_user.mention),
+    m=await message.reply_text(".")
+    n=await m.edit("..")
+    o=await n.edit("...")
+    await o.edit.reply_photo(photo=Config.START_IMG, caption=Config.START_MSG.format(message.from_user.mention),
          reply_markup=InlineKeyboardMarkup(
             [
                 [
