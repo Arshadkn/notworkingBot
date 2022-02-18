@@ -35,9 +35,9 @@ async def start(client, message):
                     InlineKeyboardButton(B1, url=B2)
             ]
           ]
-        )
-      #  reply_to_message_id=message.message_id
-   # )
+        ),
+        reply_to_message_id=message.message_id
+    )
 
 
 @Client.on_message(filters.command(['song']))
