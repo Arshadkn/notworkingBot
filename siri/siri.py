@@ -25,7 +25,7 @@ async def start(client, message):
     m=await message.reply_text(".")
     n=await m.edit("..")
     o=await n.edit("...")
-    await o.message.edit.reply_text(text=Config.START_MSG.format(message.from_user.mention),
+    await o.edit(text=Config.START_MSG.format(message.from_user.mention),
          reply_markup=InlineKeyboardMarkup(
             [
                 [
