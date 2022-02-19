@@ -32,7 +32,7 @@ async def start(client, message):
            [[
              InlineKeyboardButton("ABS", url=B3)
            ],[
-             InlineKeyboardButton("Owner", url="https://t.me/GXNeo),
+             InlineKeyboardButton("Owner", url="https://t.me/GXNeo"),
              InlineKeyboardButton("B1", callback_data="close_page")
            ]])
  
