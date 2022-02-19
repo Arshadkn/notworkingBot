@@ -38,7 +38,7 @@ async def start(client, message):
                  
     
 @Client.on_message(filters.command(['song']))
- async def song(client, message):
+ async def a(client, message):
     query = ''
     for i in message.command[1:]:
         query += ' ' + str(i)
@@ -104,8 +104,9 @@ async def start(client, message):
     except Exception as e:
         print(e)
 
-                 
-    elif query.data == "close_pages":
+@Client.on_callback_query()
+async def cb_handler(client: Client, query: CallbackQuery):                 
+    if query.data == "close_pages":
         await query.message.delete()
         try:
             await query.message.reply_to_message.delete()
