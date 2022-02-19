@@ -6,6 +6,7 @@ import requests
 
 import os
 import time
+import asyncio
 from config import Config
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 
@@ -18,6 +19,7 @@ async def start(client, message):
     m=await message.reply_text("▰▱▱▱")
     n=await m.edit("▰▰▱▱")
     s=await n.edit("▰▰▰▱")
+    await asyncio.sleep(2)
     o=await s.edit("▰▰▰▰")
     await o.edit(text=Config.START_MSG.format(message.from_user.mention),
          disable_web_page_preview=True,
