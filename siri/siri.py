@@ -7,14 +7,14 @@ import requests
 import os
 import time
 from config import Config
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 
 ABS="🎧 ᴍᴜsɪᴄ.ᴘᴀɴᴅᴀ"
 APPER="Gxneo"
 OWNER="ᴏᴡɴᴇʀ"
 B3="telegram.dog/musicspanda"
 B2="telegram.dog/Elliot_tg"
-B1="ᴅᴇᴠᴇʟᴘᴇʀ"
+B1="ᴄʟᴏsᴇ"
 
 def time_to_seconds(time):
     stringt = str(time)
@@ -32,12 +32,19 @@ async def start(client, message):
              InlineKeyboardButton("ABS", url=B3)
            ],[
              InlineKeyboardButton("Owner", url=f"https://t.me/{Config.OWNER}),
-             InlineKeyboardButton("B1", url=B2)
+             InlineKeyboardButton("B1", callback_data="close_page")
            ]])
  
            
 
-        
+@Client.on_callback_query()
+async def cb_handler(client: Bot, query: CallbackQuery):
+    if query.data == "close_pages":
+        await query.message.delete()
+        try:
+            await query.message.reply_to_message.delete()
+        except:
+            pass
 
 @Client.on_message(filters.command(['song']))
 def a(client, message):
