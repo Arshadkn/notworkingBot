@@ -34,7 +34,7 @@ async def start(client, message):
            ],[
              InlineKeyboardButton("Owner", url="https://t.me/GXNeo"),
              InlineKeyboardButton("B1", callback_data="close_page")
-           ]])
+           ]]))
                  
     
 @Client.on_message(filters.command(['song']))
