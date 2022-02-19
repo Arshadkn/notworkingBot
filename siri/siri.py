@@ -35,11 +35,7 @@ async def start(client, message):
              InlineKeyboardButton("Owner", url="https://t.me/GXNeo"),
              InlineKeyboardButton("B1", callback_data="close_page")
            ]])
- 
-           
-
-@Client.on_callback_query()
-async def cb_handler(client: Bot, query: CallbackQuery):
+                 
     if query.data == "close_pages":
         await query.message.delete()
         try:
