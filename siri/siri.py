@@ -97,15 +97,10 @@ def a(client, message):
     except Exception as e:
         print(e)
 
-@Client.on_callback_query()
-async def cb_handler(client: Client, query: CallbackQuery):                 
-    if query.data == "close_pages":
-        await query.message.delete()
-        try:
+@Client.on_callback_query(filters.regex("close"))
+async def close_dta(bot, query):
+   await query.message.delete()
+   try:
             await query.message.reply_to_message.delete()
         except:
             pass
-        
-    elif query.data == "close_pages":
-        await query.answer(url=f"https://t.me/GXNeo")
-        return
