@@ -27,7 +27,7 @@ async def start(client, message):
              InlineKeyboardButton("🎧 ᴍᴜsɪᴄ.ᴘᴀɴᴅᴀ", url="telegram.dog/musicspanda")
            ],[
              InlineKeyboardButton("ᴏᴡɴᴇʀ", callback_data="gxneo"),
-             InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close_pages")
+             InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close")
            ]]))
                  
     
@@ -101,4 +101,7 @@ def a(client, message):
 @Client.on_callback_query(filters.regex("close"))
 async def close_dta(bot, query):
    await query.message.delete()
-        
+  
+@Client.on_callback_query(filters.regex("gxneo"))
+async def neo(bot, query):
+   await query.answer(url="https://t.me/GXNeo")
