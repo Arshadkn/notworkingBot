@@ -36,13 +36,7 @@ async def start(client, message):
              InlineKeyboardButton("B1", callback_data="close_page")
            ]])
                  
-    elif query.data == "close_pages":
-        await query.message.delete()
-        try:
-            await query.message.reply_to_message.delete()
-        except:
-            pass
-
+    
 @Client.on_message(filters.command(['song']))
 def a(client, message):
     query = ''
@@ -109,3 +103,11 @@ def a(client, message):
         os.remove(thumb_name)
     except Exception as e:
         print(e)
+
+                 
+    elif query.data == "close_pages":
+        await query.message.delete()
+        try:
+            await query.message.reply_to_message.delete()
+        except:
+            pass
