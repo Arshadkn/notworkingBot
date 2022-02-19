@@ -9,13 +9,6 @@ import time
 from config import Config
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 
-ABS="🎧 ᴍᴜsɪᴄ.ᴘᴀɴᴅᴀ"
-APPER="Gxneo"
-Owner="ᴏᴡɴᴇʀ"
-B3="telegram.dog/musicspanda"
-B2="telegram.dog/Elliot_tg"
-B1="ᴄʟᴏsᴇ"
-
 def time_to_seconds(time):
     stringt = str(time)
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
@@ -30,10 +23,10 @@ async def start(client, message):
          disable_web_page_preview=True,
          reply_markup = InlineKeyboardMarkup(
            [[
-             InlineKeyboardButton("ABS", url=B3)
+             InlineKeyboardButton("🎧 ᴍᴜsɪᴄ.ᴘᴀɴᴅᴀ", url="telegram.dog/musicspanda")
            ],[
-             InlineKeyboardButton("Owner", url="https://t.me/GXNeo"),
-             InlineKeyboardButton("B1", callback_data="close_page")
+             InlineKeyboardButton("ᴏᴡɴᴇʀ", url="https://t.me/GXNeo"),
+             InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close_pages")
            ]]))
                  
     
