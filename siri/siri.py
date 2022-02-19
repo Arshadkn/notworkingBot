@@ -11,7 +11,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 
 ABS="🎧 ᴍᴜsɪᴄ.ᴘᴀɴᴅᴀ"
 APPER="Gxneo"
-OWNER="ᴏᴡɴᴇʀ"
+Owner="ᴏᴡɴᴇʀ"
 B3="telegram.dog/musicspanda"
 B2="telegram.dog/Elliot_tg"
 B1="ᴄʟᴏsᴇ"
@@ -22,16 +22,17 @@ def time_to_seconds(time):
 
 @Client.on_message(filters.command('start') & filters.private)
 async def start(client, message):
-    m=await message.reply_text(".")
-    n=await m.edit("..")
-    o=await n.edit("...")
+    m=await message.reply_text("▰▱▱▱")
+    n=await m.edit("▰▰▱▱")
+    s=await n.edit("▰▰▰▱")
+    o=await s.edit("▰▰▰▰")
     await o.edit(text=Config.START_MSG.format(message.from_user.mention),
          disable_web_page_preview=True,
          reply_markup = InlineKeyboardMarkup(
            [[
              InlineKeyboardButton("ABS", url=B3)
            ],[
-             InlineKeyboardButton("Owner", url=f"https://t.me/{Config.OWNER}),
+             InlineKeyboardButton("Owner", url=f"https://t.me/GXNeo),
              InlineKeyboardButton("B1", callback_data="close_page")
            ]])
  
