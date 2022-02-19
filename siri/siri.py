@@ -100,7 +100,4 @@ def a(client, message):
 @Client.on_callback_query(filters.regex("close"))
 async def close_dta(bot, query):
    await query.message.delete()
-        try:
-            await query.message.reply_to_message.delete()
-        except:
-            pass
+        
