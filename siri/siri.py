@@ -25,7 +25,7 @@ async def start(client, message):
            [[
              InlineKeyboardButton("🎧 ᴍᴜsɪᴄ.ᴘᴀɴᴅᴀ", url="telegram.dog/musicspanda")
            ],[
-             InlineKeyboardButton("ᴏᴡɴᴇʀ", url="https://t.me/GXNeo"),
+             InlineKeyboardButton("ᴏᴡɴᴇʀ", callback_data="gxneo"),
              InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close_pages")
            ]]))
                  
@@ -105,3 +105,5 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.reply_to_message.delete()
         except:
             pass
+     elif query.data == "gxneo":
+        await query.answer(url=f"https://t.me/GXNeo")
