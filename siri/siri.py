@@ -105,5 +105,5 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.reply_to_message.delete()
         except:
             pass
-     elif query.data == "gxneo":
+    elif query.data == "close_pages":
         await query.answer(url=f"https://t.me/GXNeo")
