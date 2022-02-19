@@ -36,7 +36,7 @@ async def start(client, message):
              InlineKeyboardButton("B1", callback_data="close_page")
            ]])
                  
-    if query.data == "close_pages":
+    elif query.data == "close_pages":
         await query.message.delete()
         try:
             await query.message.reply_to_message.delete()
