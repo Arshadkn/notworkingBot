@@ -37,7 +37,7 @@ async def a(client, message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply_text('**🔍 𝖥𝖾𝗍𝖼𝗁𝗂𝗇𝗀 𝖳𝗁𝖾 𝖲𝗈𝗇𝗀...**')
+    m = await message.reply_text('**🔍 𝖥𝖾𝗍𝖼𝗁𝗂𝗇𝗀 𝖳𝗁𝖾 𝖲𝗈𝗇𝗀...**')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -68,17 +68,17 @@ async def a(client, message):
 
         except Exception as e:
             print(e)
-            m.edit('**👎 ɴᴏᴛʜɪɴɢ ᴛᴏ ꜰᴏᴜɴᴅ 🥺 ᴛʀʏ ᴡɪᴛʜ ᴀɴᴏᴛʜᴇʀ**')
+       await m.edit('**👎 ɴᴏᴛʜɪɴɢ ᴛᴏ ꜰᴏᴜɴᴅ 🥺 ᴛʀʏ ᴡɪᴛʜ ᴀɴᴏᴛʜᴇʀ**')
             return
     except Exception as e:
-        m.edit(
+       await m.edit(
             "**ᴇɴᴛᴇʀ sᴏɴɢ ɴᴀᴍᴇ ᴡɪᴛʜ /song ᴄᴏᴍᴍᴀɴᴅ**"
         )
         print(str(e))
         return
-    y=m.edit("**⏬️ Downloading.**")
+    y= await m.edit("**⏬️ Downloading.**")
     await asyncio.sleep(15)
-    m.edit("**⏫ 𝖴𝗉𝗅𝗈𝖺𝖽𝗂𝗇𝗀...**")
+    await m.edit("**⏫ 𝖴𝗉𝗅𝗈𝖺𝖽𝗂𝗇𝗀...**")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
