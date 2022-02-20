@@ -32,12 +32,12 @@ async def start(client, message):
                  
     
 @Client.on_message(filters.command(['song']))
-async def a(client, message):
+def a(client, message):
     query = ''
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = await message.reply_text('**🔍 𝖥𝖾𝗍𝖼𝗁𝗂𝗇𝗀 𝖳𝗁𝖾 𝖲𝗈𝗇𝗀...**')
+    m = message.reply_text('**🔍 𝖥𝖾𝗍𝖼𝗁𝗂𝗇𝗀 𝖳𝗁𝖾 𝖲𝗈𝗇𝗀...**')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -68,17 +68,17 @@ async def a(client, message):
 
         except Exception as e:
             print(e)
-            await m.edit('**👎 ɴᴏᴛʜɪɴɢ ᴛᴏ ꜰᴏᴜɴᴅ 🥺 ᴛʀʏ ᴡɪᴛʜ ᴀɴᴏᴛʜᴇʀ**')
+            m.edit('**👎 ɴᴏᴛʜɪɴɢ ᴛᴏ ꜰᴏᴜɴᴅ 🥺 ᴛʀʏ ᴡɪᴛʜ ᴀɴᴏᴛʜᴇʀ**')
             return
     except Exception as e:
-       await m.edit(
+       m.edit(
             "**ᴇɴᴛᴇʀ sᴏɴɢ ɴᴀᴍᴇ ᴡɪᴛʜ /song ᴄᴏᴍᴍᴀɴᴅ**"
         )
         print(str(e))
         return
-    y= await m.edit("**⏬️ Downloading.**")
-    await asyncio.sleep(15)
-    await m.edit("**⏫ 𝖴𝗉𝗅𝗈𝖺𝖽𝗂𝗇𝗀...**")
+    y=m.edit("**⏬️ Downloading.**")
+    syncio.sleep(15)
+    m.edit("**⏫ 𝖴𝗉𝗅𝗈𝖺𝖽𝗂𝗇𝗀...**")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
@@ -89,8 +89,8 @@ async def a(client, message):
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
-       await message.reply_audio(audio_file, caption=rep, parse_mode='HTML', title=title, duration=dur, performer=performer, thumb=thumb_name)
-       await m.delete()
+       message.reply_audio(audio_file, caption=rep, parse_mode='HTML', title=title, duration=dur, performer=performer, thumb=thumb_name)
+       m.delete()
     except Exception as e:
        await m.edit('**ᴀɴ ɪɴᴛᴇʀɴᴀʟ ᴇʀʀᴏʀ ᴏᴄᴄᴇᴜʀᴇᴅ; ʀᴇᴘᴏʀᴛ ᴛʜɪs @GxNeo!!**')
         print(e)
