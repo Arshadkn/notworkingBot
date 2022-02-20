@@ -76,8 +76,6 @@ def a(client, message):
         )
         print(str(e))
         return
-    y=m.edit("**⏬️ Downloading.**")
-    syncio.sleep(15)
     m.edit("**⏫ 𝖴𝗉𝗅𝗈𝖺𝖽𝗂𝗇𝗀...**")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
