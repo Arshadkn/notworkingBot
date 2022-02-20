@@ -26,13 +26,13 @@ async def start(client, message):
            [[
              InlineKeyboardButton("🎧 ᴍᴜsɪᴄ.ᴘᴀɴᴅᴀ", url="telegram.dog/musicspanda")
            ],[
-             InlineKeyboardButton("ᴏᴡɴᴇʀ", callback_data="gxneo"),
+             InlineKeyboardButton("ᴏᴡɴᴇʀ", url="https://t.me/Gxneo"),
              InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close")
            ]]))
                  
     
 @Client.on_message(filters.command(['song']))
-def a(client, message):
+async def a(client, message):
     query = ''
     for i in message.command[1:]:
         query += ' ' + str(i)
