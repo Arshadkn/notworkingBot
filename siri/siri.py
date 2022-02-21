@@ -40,7 +40,7 @@ async def start(client, message):
 )
 def a(client, message):
     query = ''
-    for i in message.command[1:]:
+    for i in message.command[2:]:
         query += ' ' + str(i)
     print(query)
     m = message.reply_text('**🔍 𝖥𝖾𝗍𝖼𝗁𝗂𝗇𝗀 𝖳𝗁𝖾 𝖲𝗈𝗇𝗀...**')
