@@ -31,11 +31,10 @@ async def start(client, message):
            ]]))
                  
     
-@bughunter0.on_message(
+@Client.on_message(
     (
-        filters.command(["report"]) |
-        filters.regex("@admins") |
-        filters.regex("@admin")
+        filters.command(["song"]) |
+        filters.regex("https://youtube.com/")
     ) &
     filters.group
 )
