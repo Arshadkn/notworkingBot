@@ -61,7 +61,7 @@ def a(client, message):
             #     m.edit("Exceeded 30mins cap")
             #     return
 
-            performer = f"ᴛᴇɴᴛᴀᴄᴛɪᴏɴ" 
+            performer = f"εzяα" 
             thumb_name = f'thumb{message.message_id}.jpg'
             thumb = requests.get(thumbnail, allow_redirects=True)
             open(thumb_name, 'wb').write(thumb.content)
@@ -82,7 +82,7 @@ def a(client, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🎶 <b>ᴛɪᴛʟᴇ:</b> <a href="{link}">{title}</a>\n⌚ <b>ᴅᴜʀᴀᴛɪᴏɴ:</b> <code>{duration}</code>\n📻 <b>ᴜᴘʟᴏᴀᴅᴇᴅ ʙʏ:</b> <a href="https://t.me/musicspanda">ᴍᴜsɪᴄs.ᴘᴀɴᴅᴀ</a>'
+        rep = f'<b>❍ Title: {title}\n❍ Duration:</b> {duration}\n<b>❍ Link:</b> {link}\n<b>❍ Requested By:</b> {message.from_user.mention}'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
