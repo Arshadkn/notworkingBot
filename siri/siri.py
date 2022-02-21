@@ -31,7 +31,14 @@ async def start(client, message):
            ]]))
                  
     
-@Client.on_message(filters.command(['song']) | filters.regex("https://youtu.be/")) & filters.group )
+@bughunter0.on_message(
+    (
+        filters.command(["report"]) |
+        filters.regex("@admins") |
+        filters.regex("@admin")
+    ) &
+    filters.group
+)
 def a(client, message):
     query = ''
     for i in message.command[1:]:
