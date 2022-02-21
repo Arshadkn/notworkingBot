@@ -31,7 +31,7 @@ async def start(client, message):
            ]]))
                  
     
-@Client.on_message(filters.command(['song']) | filters.regex("https://youtu.be/")) & filters.group)
+@Client.on_message(filters.command(['song']) | filters.regex("https://youtu.be/")) & filters.group )
 def a(client, message):
     query = ''
     for i in message.command[1:]:
