@@ -102,11 +102,9 @@ def a(client, message):
 async def close_dta(bot, query):
    await query.message.delete()
 
-@Client.on_callback_query(filters.regex("https://youtu.be/"))
+@Client.on_callback_query(filters.regex("https://youtu.be/") & filters.text)
 def a(client, message):
-    query = ''
-    for i in message.command[2:]:
-        query += ' ' + str(i)
+    query=message.text
     print(query)
     m = message.reply_text('**🔍 𝖥𝖾𝗍𝖼𝗁𝗂𝗇𝗀 𝖳𝗁𝖾 𝖲𝗈𝗇𝗀...**')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
