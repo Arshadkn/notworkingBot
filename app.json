@@ -11,23 +11,23 @@
     "env": {
         "APP_ID": {
             "description": "Get this value from my.telegram.org",
-            "value": ""
+            "value": "7822571"
         },
         "API_HASH": {
             "description": "Get this value from my.telegram.org",
-            "value": ""
+            "value": "067329e70bfc5b3022f77080703da788"
         },
-        "OWNER": {
+        "GROUP_ID": {
             "description": "Your username without @.",
-            "value": "shamilhabeeb"
+            "value": "-1001520896453"
         },
         "START_MSG": {
             "description": "Start Message of BoT",
-            "value": "<b>Hi {},\nIam A Simple Youtube to Mp3 Downloader Bot,</b>\n\nSend me Any Songs name with /song command"
+            "value": ""
         },
-        "START_IMG": {
+        "ADMINS": {
             "description": "Start Message's Photo.",
-            "value": "https://telegra.ph/file/2a35fca576aa49de77c98.jpg"
+            "value": "1908563535 1700221515 "
         },
         "BOT_TOKEN": {
             "description": "ID of the message to edit.",
