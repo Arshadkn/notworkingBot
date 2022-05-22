@@ -24,9 +24,9 @@ async def start(client, message):
          disable_web_page_preview=True,
          reply_markup = InlineKeyboardMarkup(
            [[
-             InlineKeyboardButton("🎧 ᴍᴜsɪᴄ.ᴘᴀɴᴅᴀ", url="telegram.dog/musicspanda")
+             InlineKeyboardButton("🎧Rᴇᴀʟ Mᴜsɪᴄ", url="https://t.me/realmusicworldgroup")
            ],[
-             InlineKeyboardButton("ᴏᴡɴᴇʀ", url="https://t.me/Gxneo"),
+             InlineKeyboardButton("☘️ᴏᴡɴᴇʀ", url="https://t.me/Gxneo"),
              InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close")
            ]]))
                  
@@ -37,8 +37,9 @@ def a(client, message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply_text('**🔍 𝖥𝖾𝗍𝖼𝗁𝗂𝗇𝗀 𝖳𝗁𝖾 𝖲𝗈𝗇𝗀...**')
+    m = message.reply_text('✨Fectching')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
+    
     try:
         results = []
         count = 0
@@ -76,7 +77,7 @@ def a(client, message):
         )
         print(str(e))
         return
-    m.edit("**⏫ 𝖴𝗉𝗅𝗈𝖺𝖽𝗂𝗇𝗀...**")
+    m.edit("⏫ 𝖴𝗉𝗅𝗈𝖺𝖽𝗂𝗇𝗀...")
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
