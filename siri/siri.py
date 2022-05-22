@@ -39,7 +39,7 @@ def a(client, message):
     print(query)
     m = message.reply_text('✨Fectching')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
-    
+    message.reply_chat_action("typing")
     try:
         results = []
         count = 0
@@ -78,6 +78,7 @@ def a(client, message):
         print(str(e))
         return
     m.edit("⏫ 𝖴𝗉𝗅𝗈𝖺𝖽𝗂𝗇𝗀...")
+    message.reply_chat_action("upload_audio")
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
@@ -91,7 +92,7 @@ def a(client, message):
         message.reply_audio(audio_file, caption=rep, parse_mode='HTML', title=title, duration=dur, performer=performer, thumb=thumb_name)
         m.delete()
     except Exception as e:
-        m.edit('**ᴀɴ ɪɴᴛᴇʀɴᴀʟ ᴇʀʀᴏʀ ᴏᴄᴄᴇᴜʀᴇᴅ; ʀᴇᴘᴏʀᴛ ᴛʜɪs @GxNeo!!**')
+        m.edit('**🎧Try Again😛**')
         print(e)
     try:
         os.remove(audio_file)
@@ -103,6 +104,6 @@ def a(client, message):
 async def close_dta(bot, query):
    await query.message.delete()
   
-@Client.on_callback_query(filters.regex("gxneo"))
+@Client.on_callback_query(filters.regex("Realmusic"))
 async def neo(bot, query):
-   await query.answer(url="https://t.me/GXNeo")
+   await query.answer(url="https://t.me/arshad6153")
